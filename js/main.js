@@ -1,6 +1,10 @@
 (function ($) {
     "use strict";
 
+    // Initiate the wowjs
+    new WOW().init();
+
+
     // Spinner
     var spinner = function () {
         setTimeout(function () {
@@ -10,18 +14,14 @@
         }, 1);
     };
     spinner();
-    
-    
-    // Initiate the wowjs
-    new WOW().init();
 
 
     // Sticky Navbar
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 45) {
-            $('.nav-bar').addClass('sticky-top');
+        if ($(this).scrollTop() > 300) {
+            $('.sticky-top').addClass('shadow-sm').css('top', '0px');
         } else {
-            $('.nav-bar').removeClass('sticky-top');
+            $('.sticky-top').removeClass('shadow-sm').css('top', '-100px');
         }
     });
     
